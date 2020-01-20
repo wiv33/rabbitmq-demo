@@ -1,4 +1,4 @@
-package com.psawesome.rabbitmqdemo.tutorial;
+package com.psawesome.rabbitmqdemo.tutorials.chap1;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
