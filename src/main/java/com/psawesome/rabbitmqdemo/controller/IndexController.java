@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 public class IndexController {
 
     @GetMapping("/index")
-    public String indexPage() {
-        return "index";
+    public Mono<String> indexPage() {
+        return Mono.just("index");
     }
 }
