@@ -47,7 +47,7 @@ public class Tut2Sender {
         builder.append(count.incrementAndGet());
         String message = builder.toString();
         template.convertAndSend(queue.getName(), message);
-        log.info(" [x] Send '{}'", message);
+        log.info(" [x] Sent '{}'", message);
     }
 
 //    @Scheduled(fixedDelay = 1000, initialDelay = 500)
@@ -67,7 +67,7 @@ public class Tut2Sender {
                     }
                     String message = tuple.getT1().toString();
                     template.convertAndSend(queue.getName(), message);
-                    log.info("[x] Send '{}'", message);
+                    log.info("[x] Sent '{}'", message);
                 }).subscribe()
         ;
 
