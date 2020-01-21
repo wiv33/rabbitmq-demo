@@ -28,14 +28,13 @@ public class Tut2Sender {
 
     public Tut2Sender() {
         log.info("send RUN ????");
-        send();
+//        send();
     }
 
     AtomicInteger dots = new AtomicInteger(0);
 
     AtomicInteger count = new AtomicInteger(0);
 
-/*
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void send() {
         StringBuilder builder = new StringBuilder("Hello");
@@ -50,10 +49,9 @@ public class Tut2Sender {
         template.convertAndSend(queue.getName(), message);
         log.info(" [x] Send '{}'", message);
     }
-*/
 
 //    @Scheduled(fixedDelay = 1000, initialDelay = 500)
-    public void send() {
+/*    public void send() {
         Flux<Long> interval = Flux.interval(Duration.ofSeconds(1));
         Flux.defer(() -> Flux.zip(
                 Flux.fromStream(Stream.iterate(new StringBuilder("Hello"), sb -> {
@@ -73,5 +71,5 @@ public class Tut2Sender {
                 }).subscribe()
         ;
 
-    }
+    }*/
 }
