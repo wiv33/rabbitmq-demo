@@ -11,7 +11,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class RabbitmqDemoApplication {
 
     public static void main(String[] args) {
+        //tut2
+        System.setProperty("spring.profiles.active", "tut2,work-queues,receiver,sender");
+
         SpringApplication.run(RabbitmqDemoApplication.class, args);
+
     }
 
     @Bean
