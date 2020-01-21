@@ -22,12 +22,12 @@ public class Tut3Config {
     @Profile("receiver")
     private static class ReceiverConfig {
 
-        @Bean("tut3.autoDeleteQueue1")
+        @Bean
         public Queue autoDeleteQueue1() {
             return new AnonymousQueue();
         }
 
-        @Bean("tut3.autoDeleteQueue2")
+        @Bean
         public Queue autoDeleteQueue2() {
             return new AnonymousQueue();
         }
