@@ -58,4 +58,9 @@ public class Tut5Config {
         // end::org.springframework.amqp.core.Binding
     }
 
+    @Profile("sender")
+    @Bean("tut5.sender")
+    public Tut5Sender sender() {
+        return new Tut5Sender();
+    }
 }
