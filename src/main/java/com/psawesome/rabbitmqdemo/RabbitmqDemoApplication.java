@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.util.stream.Stream;
+
 @SpringBootApplication
 @EnableScheduling
 public class RabbitmqDemoApplication {
@@ -19,7 +21,10 @@ public class RabbitmqDemoApplication {
 //        System.setProperty("spring.profiles.active", "tut3,pub-sub,publish-subscribe,receiver,sender");
 
 //        tut4
-        System.setProperty("spring.profiles.active", "tut4,sender,receiver,routing");
+
+//        tut5
+        System.setProperty("spring.profiles.active", "tut5,sender,receiver,topics");
+
         SpringApplication.run(RabbitmqDemoApplication.class, args);
 
     }
