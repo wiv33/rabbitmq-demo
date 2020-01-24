@@ -20,4 +20,10 @@ by Example jar command
 docker command
 > Goto chap{version}
 
-    docker-compose up
+    docker-compose up -d
+    
+    docker-compose logs -f sender 
+    
+another cmd
+
+    docker-compose logs -f receiver
