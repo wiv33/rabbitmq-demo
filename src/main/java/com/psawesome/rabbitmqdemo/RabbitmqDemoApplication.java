@@ -21,7 +21,10 @@ public class RabbitmqDemoApplication {
 //        tut4
 
 //        tut5
-        System.setProperty("spring.profiles.active", "tut5,sender,receiver,topics");
+//        System.setProperty("spring.profiles.active", "tut5,sender,receiver,topics");
+
+//        tut6
+        System.setProperty("spring.profiles.active", "tut6,client,server,rpc");
 
         SpringApplication.run(RabbitmqDemoApplication.class, args);
 
