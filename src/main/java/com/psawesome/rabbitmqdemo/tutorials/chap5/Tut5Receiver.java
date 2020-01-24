@@ -13,7 +13,7 @@ import org.springframework.util.StopWatch;
 public class Tut5Receiver {
 
     // start::RabbitListener
-    @RabbitListener(queues = "#{autoDeleteQueue1.name}")
+    @RabbitListener(queues = "#{autoDeleteQueue.name}")
     public void receive1(String in) {
         receive(in, 1);
     }

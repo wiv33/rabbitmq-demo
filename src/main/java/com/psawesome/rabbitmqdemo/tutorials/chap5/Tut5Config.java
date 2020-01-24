@@ -21,7 +21,11 @@ public class Tut5Config {
     }
 
     @Profile("receiver")
-    private static class ReceiverConfig {
+    private class ReceiverConfig {
+        public ReceiverConfig() {
+            System.out.println("ReceiverConfig.ReceiverConfig");
+        }
+
         // receiver
         @Bean
         public Tut5Receiver receiver() {
@@ -29,12 +33,12 @@ public class Tut5Config {
         }
 
         // start::org.springframework.amqp.core.Queue
-        @Bean
+        @Bean("autoDeleteQueue")
         public Queue autoDeleteQueue1() {
             return new AnonymousQueue();
         }
 
-        @Bean
+        @Bean("autoDeleteQueue2")
         public Queue autoDeleteQueue2() {
             return new AnonymousQueue();
         }
@@ -42,8 +46,8 @@ public class Tut5Config {
 
         // start::org.springframework.amqp.core.Binding
         @Bean
-        public Binding binding1a(TopicExchange topicExchange, Queue autoDeleteQueue1) {
-            return BindingBuilder.bind(autoDeleteQueue1).to(topicExchange).with("*.orange.*");
+        public Binding binding1a(TopicExchange topicExchange, Queue autoDeleteQueue) {
+            return BindingBuilder.bind(autoDeleteQueue).to(topicExchange).with("*.orange.*");
         }
 
         @Bean

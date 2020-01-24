@@ -9,3 +9,12 @@ logging:
 tutorial:
   client:
     duration: 10000
+
+
+---
+spring:
+  profiles:
+    active: tut5
+tutorial:
+  client:
+    duration: 30000

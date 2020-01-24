@@ -37,15 +37,12 @@ public class Tut5Sender {
     @Scheduled(fixedDelay = 10000, initialDelay = 500)
     public void send() {
         int keyLength = keys.size();
-        Flux.interval(Duration.ofSeconds(1))
+        Flux.interval(Duration.ofSeconds(3))
                 .map(c -> index.getAndIncrement() % keyLength)
-                .map(c -> keys.get(c))
-                .flatMap(m -> Mono.zip(Mono.just(m), Mono.just(count.incrementAndGet())))
+                .flatMap(m -> Flux.zip(Flux.just(keys.get(m)), Flux.just("Hello Tut5 to " + count.incrementAndGet())))
                 .subscribe(c -> {
-                    log.info("key={}, [x] Sent '{}'",c.getT1() ,c.toString());
-                    template.convertAndSend(topic.getName(), c.getT1(), c.toString());
+                    log.info("key={}, [x] Sent '{}'", c.getT1(), c.getT2());
+                    template.convertAndSend(topic.getName(), c.getT1(), c.getT2());
                 });
-
-
     }
 }
