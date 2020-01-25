@@ -24,19 +24,21 @@ public class Tuto1Sender {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
     @Autowired
     private Queue queue;
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+    @Scheduled(fixedDelay = 10000, initialDelay = 500)
     public void send() {
-        String message = "Hello World : " + UUID.randomUUID();
         Flux<Long> interval = Flux.interval(Duration.ofSeconds(1L));
-        Flux.defer(() -> Flux.zip(Flux.fromIterable(Arrays.asList(message)), interval))
-                .doOnNext(this::accept);
-        log.info("Queue Name= '{}' :: Send= '{}'", queue.getName(), message);
+        Flux<Object> generate = Flux.generate(sink -> sink.next("Hello World : " + UUID.randomUUID()));
+        Flux.zip(generate, interval)
+                .map(Tuple2::getT1)
+                .subscribe(con -> {
+                    log.info("Queue Name= '{}' :: Sent= '{}'", queue.getName(), con);
+                    this.rabbitTemplate.convertAndSend(queue.getName(), con);
+                });
+
     }
 
-    private void accept(Tuple2<String, Long> df) {
-        this.rabbitTemplate.convertAndSend(queue.getName(), df.getT1() + " : " + df.getT2());
-    }
 }

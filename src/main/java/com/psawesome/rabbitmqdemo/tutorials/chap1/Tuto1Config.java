@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Profile;
  * author: PS
  * DATE: 2020-01-21 화요일 00:36
  */
-@Profile("tut1")
+@Profile({"tut1", "hello-world"})
 @Configuration
 public class Tuto1Config {
 
@@ -21,11 +21,13 @@ public class Tuto1Config {
         return new Queue("hello");
     }
 
+    @Profile("receiver")
     @Bean("tut1.receiver")
     public Tuto1Receiver receiver() {
         return new Tuto1Receiver();
     }
 
+    @Profile("sender")
     @Bean("tut1.sender")
     public Tuto1Sender sender() {
         return new Tuto1Sender();
