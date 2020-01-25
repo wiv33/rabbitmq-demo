@@ -29,7 +29,7 @@ public class Tut4Sender {
 
     private final List<String> keys = Arrays.asList("orange", "black", "green");
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+    @Scheduled(fixedDelay = 1000, initialDelay = 7777)
     public void send() {
         StringBuilder sb = new StringBuilder("Hello to ");
         if (this.index.incrementAndGet() == 3) {

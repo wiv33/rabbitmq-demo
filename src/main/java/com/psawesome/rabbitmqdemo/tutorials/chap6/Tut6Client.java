@@ -22,7 +22,7 @@ public class Tut6Client {
 
     int start = 0;
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 300)
+    @Scheduled(fixedDelay = 1000, initialDelay = 7777)
     public void send() {
         log.info(" [x] Requesting fib({})", start);
         Integer response = (Integer) template.convertSendAndReceive(directExchange.getName(), "rpc", start++);

@@ -35,7 +35,7 @@ public class Tut2Sender {
 
     AtomicInteger count = new AtomicInteger(0);
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+    @Scheduled(fixedDelay = 1000, initialDelay = 7777)
     public void send() {
         StringBuilder builder = new StringBuilder("Hello");
         if (dots.getAndIncrement() == 3) {
@@ -50,7 +50,7 @@ public class Tut2Sender {
         log.info(" [x] Sent '{}'", message);
     }
 
-//    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+//    @Scheduled(fixedDelay = 1000, initialDelay = 3333)
 /*    public void send() {
         Flux<Long> interval = Flux.interval(Duration.ofSeconds(1));
         Flux.defer(() -> Flux.zip(

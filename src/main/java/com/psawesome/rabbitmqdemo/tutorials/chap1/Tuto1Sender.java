@@ -33,7 +33,7 @@ public class Tuto1Sender {
         this.rabbitTemplate.convertAndSend(queue.getName(), message);
         System.out.println(" [x] Sent '" + message + "'");
     }*/
-    @Scheduled(fixedDelay = 10000, initialDelay = 500)
+    @Scheduled(fixedDelay = 10000, initialDelay = 7777)
     public void send() {
         Flux<Long> interval = Flux.interval(Duration.ofSeconds(1L));
         Flux<Object> generate = Flux.generate(sink -> sink.next("Hello World : " + UUID.randomUUID()));

@@ -32,7 +32,7 @@ public class Tut5Sender {
     private final List<String> keys = Arrays.asList("quick.orange.rabbit", "lazy.orange.elephant",
             "quick.orange.fox", "lazy.brown.fox", "lazy.pink.rabbit", "quick.brown.fox");
 
-    @Scheduled(fixedDelay = 20000, initialDelay = 500)
+    @Scheduled(fixedDelay = 20000, initialDelay = 7777)
     public void send() {
         int keyLength = keys.size();
         Flux.interval(Duration.ofSeconds(3))
@@ -44,7 +44,7 @@ public class Tut5Sender {
                 });
     }
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+    @Scheduled(fixedDelay = 1000, initialDelay = 7777)
     public void send2() {
         StringBuilder builder = new StringBuilder("Hello to ");
         if (this.index.incrementAndGet() >= keys.size()) {
