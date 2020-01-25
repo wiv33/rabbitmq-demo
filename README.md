@@ -4,6 +4,20 @@
 - [rabbitMQ-tutorial-java](https://www.rabbitmq.com/tutorials/tutorial-one-java.html)
 - [another-language](https://github.com/rabbitmq/rabbitmq-tutorials)
 
+## Go to a Chapter in this repository 
+- [chap1](https://github.com/wiv33/rabbitmq-demo/tree/master/src/main/java/com/psawesome/rabbitmqdemo/tutorials/chap1)
+    - hello-world
+- [chap2](https://github.com/wiv33/rabbitmq-demo/tree/master/src/main/java/com/psawesome/rabbitmqdemo/tutorials/chap2)
+    - Work-queues
+- [chap3](https://github.com/wiv33/rabbitmq-demo/tree/master/src/main/java/com/psawesome/rabbitmqdemo/tutorials/chap3)
+    - FANOUT Exchange
+- [chap4](https://github.com/wiv33/rabbitmq-demo/tree/master/src/main/java/com/psawesome/rabbitmqdemo/tutorials/chap4)
+    - Direct Exchange: Routing
+- [chap5](https://github.com/wiv33/rabbitmq-demo/tree/master/src/main/java/com/psawesome/rabbitmqdemo/tutorials/chap5)
+    - Topic Exchange
+- [chap6](https://github.com/wiv33/rabbitmq-demo/tree/master/src/main/java/com/psawesome/rabbitmqdemo/tutorials/chap6)
+    - Direct Exchange: RPC
+
 ## Explanation 
 this tutorials is required rabbitmq server and another two server that is receiver and sender or server and client
 
