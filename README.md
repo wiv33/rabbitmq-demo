@@ -4,7 +4,7 @@
 - [rabbitMQ-tutorial-java](https://www.rabbitmq.com/tutorials/tutorial-one-java.html)
 - [another-language](https://github.com/rabbitmq/rabbitmq-tutorials)
 
-## Description 
+## Explanation 
 this tutorials is required rabbitmq server and another two server that is receiver and sender or server and client
 
 you can run command to profiles active in jar or docker 
