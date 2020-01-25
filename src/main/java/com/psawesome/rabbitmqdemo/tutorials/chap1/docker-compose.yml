@@ -3,7 +3,6 @@ version: '3.7'
 services:
 
   receiver:
-    container_name: receiver
     hostname: receiver
     image: psawesome/rabbit-demo-app:latest
     entrypoint:
@@ -16,7 +15,6 @@ services:
     network_mode: "host"
 
   sender:
-    container_name: sender
     hostname: sender
     image: psawesome/rabbit-demo-app:latest
     entrypoint:
