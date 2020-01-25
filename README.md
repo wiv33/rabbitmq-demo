@@ -13,6 +13,8 @@ if your choice is docker go to a docker-compose file in chapter directory
 
 by Example jar command
 
+    docker run -d -p 5672:5672 -p 15672:15672 --name rabbit-demo-server rabbitmq:3-management
+
     java -jar rabbitmq-demo.jar --spring.profiles.active=tut1,hello-world,receiver
 
     java -jar rabbitmq-demo.jar --spring.profiles.active=tut1,hello-world,sender
@@ -22,8 +24,13 @@ docker command
 
     docker-compose up -d
     
-    docker-compose logs -f sender 
+    docker-compose logs -f chap{version}_sender_1 
     
 another cmd
 
-    docker-compose logs -f receiver
+    docker-compose logs -f chap{version}_receiver_1
+    
+then
+
+    docker-compose down
+    
