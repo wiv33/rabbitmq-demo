@@ -26,7 +26,13 @@ public class Tuto1Sender {
 
     @Autowired
     private Queue queue;
-
+/*
+    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+    public void send() {
+        String message = "Hello World!";
+        this.rabbitTemplate.convertAndSend(queue.getName(), message);
+        System.out.println(" [x] Sent '" + message + "'");
+    }*/
     @Scheduled(fixedDelay = 10000, initialDelay = 500)
     public void send() {
         Flux<Long> interval = Flux.interval(Duration.ofSeconds(1L));

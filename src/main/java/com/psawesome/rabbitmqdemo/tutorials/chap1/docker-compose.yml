@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+
+  receiver:
+    build:
+      context: .
+    container_name: receiver
+    hostname: receiver
+    image: psawesome/receiver:default
+    entrypoint:
+      - java
+      - -Dspring.profiles.active=tut1,hello-world,receiver
+      - -jar
+      - app.jar
+    depends_on:
+      - rabbit-server
+    network_mode: "host"
+
+  sender:
+    container_name: sender
+    hostname: sender
+    build:
+      context: .
+    image: psawesome/sender:default
+    entrypoint:
+      - java
+      - -Dspring.profiles.active=tut1,hello-world,sender
+      - -jar
+      - app.jar
+    depends_on:
+      - rabbit-server
+    network_mode: "host"
+
+  rabbit-server:
+    hostname: rabbit
+    image: rabbitmq:3-management
+    ports:
+    - 5672:5672
+    - 15672:15672
