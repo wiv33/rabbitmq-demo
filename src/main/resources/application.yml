@@ -8,7 +8,7 @@ logging:
 
 tutorial:
   client:
-    duration: 10000
+    duration: 30000
 server:
   port: 0
 ---
@@ -16,4 +16,4 @@ spring:
   profiles: tut5
 tutorial:
   client:
-    duration: 30000
+    duration: 40000

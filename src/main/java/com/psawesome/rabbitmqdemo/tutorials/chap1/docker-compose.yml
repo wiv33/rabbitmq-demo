@@ -3,11 +3,9 @@ version: '3.7'
 services:
 
   receiver:
-    build:
-      context: .
     container_name: receiver
     hostname: receiver
-    image: psawesome/receiver:default
+    image: psawesome/rabbit-demo-app:latest
     entrypoint:
       - java
       - -Dspring.profiles.active=tut1,hello-world,receiver
@@ -20,9 +18,7 @@ services:
   sender:
     container_name: sender
     hostname: sender
-    build:
-      context: .
-    image: psawesome/sender:default
+    image: psawesome/rabbit-demo-app:latest
     entrypoint:
       - java
       - -Dspring.profiles.active=tut1,hello-world,sender
