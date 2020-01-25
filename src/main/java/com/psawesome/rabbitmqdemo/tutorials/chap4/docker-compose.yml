@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+
+  receiver:
+    hostname: receiver
+    image: psawesome/rabbit-demo-app:v4
+    entrypoint:
+      - java
+      - -Dspring.profiles.active=tut4,routing,receiver
+      - -jar
+      - app.jar
+    depends_on:
+      - rabbit-server
+    network_mode: "host"
+
+  sender:
+    hostname: sender
+    image: psawesome/rabbit-demo-app:v4
+    entrypoint:
+      - java
+      - -Dspring.profiles.active=tut4,routing,sender
+      - -jar
+      - app.jar
+    depends_on:
+      - rabbit-server
+    network_mode: "host"
+
+  rabbit-server:
+    hostname: rabbit
+    image: rabbitmq:3-management
+    ports:
+    - 5672:5672
+    - 15672:15672

@@ -1,4 +1,4 @@
-# TOPIC - EXCHANGE
+# Direct - EXCHANGE: ROUTING
 
 ## For example of command
 
@@ -6,13 +6,8 @@
     
 current cmd or new cmd window
 
-    docker logs -f chap5_receiver_1
+    docker logs -f chap4_receiver_1
     
 another command
 
-    docker logs -f chap5_sender_1
-
-
-        
-        
-
+    docker logs -f chap4_sender_1
